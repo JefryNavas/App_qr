@@ -20,8 +20,8 @@ export class Registro{
                 this.type='http';
                 this.icon='globe-outline';
                 break;
-            case 'geo':
-                this.type='geo';
+            case 'geo:':
+                this.type='geo:';
                 this.icon='map-outline';
             break;
             case 'avac':

@@ -32,8 +32,8 @@ export class DatalocalService {
           // abrir un navegador
               this.inAppB.create(registro.text,'__system');
                 break;
-            case 'geo':
-          // abrir mapas
+            case 'geo:':
+              this.navCtrl.navigateForward(`/tabs/tab2/mapa/${registro.text}`);
 
             break;
             case 'avac':

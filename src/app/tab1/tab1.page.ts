@@ -29,7 +29,7 @@ scan(){
     }
    }).catch(err => {
        console.log('Error', err);
-       this.datalocal.saveRegistro('http','https:\\www.ups.edu.ec');
+       this.datalocal.saveRegistro('geo:','geo:-78.5319996,-0.2819875');
        console.log('Dato no registrado');
    });
 }
