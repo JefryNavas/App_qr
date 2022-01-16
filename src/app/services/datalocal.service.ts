@@ -18,7 +18,8 @@ export class DatalocalService {
     this.datos_guardados = await this.storage.get('registros')||[];
   }
 
-  saveRegistro(format: string,text: string){
+  async saveRegistro(format: string,text: string){
+    await this.cargarStorage();
     const newRegistro = new Registro(format,text);// generamos un nuevo registro
     this.datos_guardados.unshift(newRegistro); // añadimos al final del arreglo el nuevo registro
     this.storage.set('registros',this.datos_guardados);

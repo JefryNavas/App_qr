@@ -18,19 +18,20 @@ export class MapaPage implements OnInit,AfterViewInit {
 
   constructor(private route: ActivatedRoute) { }
 
+
   ngOnInit() {
     let geo:any = this.route.snapshot.paramMap.get('geo');
     geo = geo.substr(4);
     geo = geo.split(',');
-    this.log= +geo[0];
-    this.lat = +geo[1];
+    this.log= +geo[1];
+    this.lat = +geo[0];
     console.log(this.lat,this.log);
 
   }
 
   ngAfterViewInit() {
     this.lonlat =[this.log,this.lat];
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZm9uc2loZXI5OSIsImEiOiJja3lhbWxyZncwNnl6Mm9wbDR5YXUybzQxIn0.mndz9URDqlYEUIlsyayG-g';
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamVmcnkyMDAwIiwiYSI6ImNreWFtbTF5czA2dzAydnFoZm9ua3p6bzcifQ.0xB7DVGzX6f24nUbddxvXw';
     const map = new mapboxgl.Map({
       style: 'mapbox://styles/mapbox/light-v10',
       center: [this.log, this.lat],
